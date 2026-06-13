@@ -1,0 +1,83 @@
+// That's My Dawg — Prisma schema (POC)
+// Source of truth for the DB. Confirm before any migration. Mirror changes in docs/data-model.md.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum ProofStatus {
+  pending
+  done
+  failed
+}
+
+enum OrderStatus {
+  pending
+  paid
+  fulfilled
+  cancelled
+}
+
+model Scene {
+  id            String   @id @default(cuid())
+  slug          String   @unique
+  name          String
+  description   String
+  priceCents    Int
+  shirtColor    String
+  badge         String?
+  sceneImageUrl String
+  active        Boolean  @default(true)
+  sortOrder     Int      @default(0)
+  createdAt     DateTime @default(now())
+
+  proofs Proof[]
+  orders Order[]
+}
+
+model Proof {
+  id            String      @id @default(cuid())
+  sceneId       String
+  sessionId     String
+  dogPhotoUrl   String
+  proofImageUrl String?
+  status        ProofStatus @default(pending)
+  model         String
+  createdAt     DateTime    @default(now())
+
+  scene Scene  @relation(fields: [sceneId], references: [id])
+  order Order?
+
+  @@index([sessionId])
+  @@index([sceneId])
+}
+
+model Order {
+  id                  String      @id @default(cuid())
+  sceneId             String
+  proofId             String      @unique
+  size                String
+  quantity            Int         @default(1)
+  amountCents         Int
+  currency            String      @default("usd")
+  status              OrderStatus @default(pending)
+  stripeSessionId     String?     @unique
+  stripePaymentIntent String?
+  customerEmail       String?
+  shippingName        String?
+  shippingAddress     Json?
+  printfulOrderId     String?
+  fulfilledAt         DateTime?
+  createdAt           DateTime    @default(now())
+
+  scene Scene @relation(fields: [sceneId], references: [id])
+  proof Proof @relation(fields: [proofId], references: [id])
+
+  @@index([status])
+}
