@@ -282,10 +282,10 @@ Apply globally; don't wait to be asked per-feature.
 
 | # | Question | Owner | Status |
 |---|---|---|---|
-| 1 | Final retail price per scene — is a flat $39.99 right once Printful base cost + AI cost are known? | You | Open |
+| 1 | Final retail price per scene — is a flat $39.99 right once Printful base cost + AI cost are known? Base cost now known: **AS Colour 5082 ≈ $23.92** fulfillment + ~$0.04 AI → ~$11 gross after ~$5 shipping at $39.99. Confirm/raise. | You | Open (base cost resolved) |
 | 2 | Free-proof cap — is 3 per session the right balance of delight vs. cost? | You | Open |
 | 3 | Dog photo retention — how long do we keep uploads and proofs after an order (or no order)? Set in security doc. | You | Open |
-| 4 | Which Printful blank is the oversized streetwear tee, and which colors per scene? | You | Open |
+| 4 | Which Printful blank is the oversized streetwear tee, and which colors per scene? | You | ✅ Resolved — **AS Colour 5082**; per-scene colors in [`docs/blank-and-colors.md`](./docs/blank-and-colors.md) |
 
 ---
 
