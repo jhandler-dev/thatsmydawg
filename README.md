@@ -4,6 +4,10 @@ Custom streetwear: a visitor uploads a photo of their dog, picks a pre-designed 
 
 > **POC build.** Scope is deliberately small (see [`PRD.md`](./PRD.md) §2). Build only what is marked POC. Phase 2 work (automated fulfillment, accounts) is documented but not built yet.
 
+## Live preview
+
+🔗 **https://jhandler-dev.github.io/thatsmydawg/** — static snapshot of the website draft, served via **GitHub Pages** from the `gh-pages` branch (`index.html` + `.nojekyll`, root folder). Temporary preview only; superseded by the real Next.js storefront (see [`ROADMAP.md`](./ROADMAP.md) → Milestone 2).
+
 ## Stack
 
 | Layer | Choice |
