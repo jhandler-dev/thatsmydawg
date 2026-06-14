@@ -78,7 +78,7 @@ Each milestone depends on the one before it. Within a milestone, items are liste
 | **W5** | 👤 | **fal.ai account** — sign up at fal.ai, create an API key → `FAL_KEY`. Add a small amount of billing credit (generations cost ~$0.04 each). | ☐ |
 | **W6** | 👤 | **Stripe account (TEST mode)** — sign up, stay in **Test mode** (toggle, top-right). From *Developers → API keys* copy the **Secret key** (`sk_test_…`) → `STRIPE_SECRET_KEY` and **Publishable key** (`pk_test_…`) → `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`. The webhook secret comes later in W39. | ☐ |
 | **W7** | 👤 | **Printful account** — sign up. No key needed for Phase 1 (we fulfill by hand); you'll use its dashboard in W45. | ☐ |
-| **W8** | 👤 | **Pick the blank tee + colors** — decide which Printful oversized tee product we sell and the shirt color per scene (PRD §13 Q4). Needed before seeding scenes (W19) is final. *I can seed with placeholder colors first and you adjust later.* | ☐ |
+| **W8** | 👤 | **Pick the blank tee + colors** — ✅ **Done.** Blank = **AS Colour 5082** (Men's Oversized Faded Tee, ~$23.92 base). Per-scene colors locked in [`docs/blank-and-colors.md`](./docs/blank-and-colors.md) (Faded Black / Faded Khaki / Faded White) — the source of truth for W19 seeding. | ✅ |
 | **W9** | 👤 | **Fill `.env.local`** — copy `.env.example` to `.env.local`, paste every value from W4–W6 and a chosen `ADMIN_PASSWORD`. This file is git-ignored — it never leaves your machine. | ☐ |
 
 **Acceptance for Epic A:** every line in [`.env.example`](./.env.example) has a real value in your local `.env.local`, and the Supabase `dawg-uploads` bucket exists.

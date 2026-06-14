@@ -12,8 +12,8 @@ Returns active scenes for the storefront grid, ordered by `sortOrder`. No auth.
       "slug": "bar-dog",
       "name": "Bar Dog",
       "description": "Cap on backwards, beer in paw, dive bar of their dreams.",
-      "priceCents": 3999,
-      "shirtColor": "Black",
+      "priceCents": 4495,
+      "shirtColor": "Faded Black",
       "badge": "Best Seller",
       "sceneImageUrl": "https://.../bar-dog.png"
     }

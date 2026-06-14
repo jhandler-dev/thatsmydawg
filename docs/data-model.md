@@ -13,7 +13,7 @@ The selectable artwork/products. Seeded (the draft's hardcoded `SHIRTS` array be
 | slug | String @unique | e.g. `bar-dog` |
 | name | String | "Bar Dog" |
 | description | String | Short blurb |
-| priceCents | Int | Retail price (e.g. 3999) |
+| priceCents | Int | Retail price (e.g. 4495) |
 | shirtColor | String | Preselected color |
 | badge | String? | "Best Seller" / "New Drop" / null |
 | sceneImageUrl | String | Scene artwork (swap base) |

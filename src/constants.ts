@@ -1,8 +1,8 @@
 // That's My Dawg — POC business rules & limits.
 // Never hardcode these values inline elsewhere — import from here.
 
-/** Default retail price in cents ($39.99). Per-scene override lives on Scene.priceCents. */
-export const DEFAULT_PRICE_CENTS = 3999;
+/** Default retail price in cents ($44.95). Per-scene override lives on Scene.priceCents. */
+export const DEFAULT_PRICE_CENTS = 4495;
 
 /** Oversized tee size run. */
 export const SIZES = ["S", "M", "L", "XL", "2XL", "3XL"] as const;
