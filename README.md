@@ -1,5 +1,6 @@
 # That's My Dawg
 
+<!-- vercel preview smoketest — W3 / issue #3; this PR is throwaway and will be closed -->
 Custom streetwear: a visitor uploads a photo of their dog, picks a pre-designed scene, and an AI swap drops their dog into the artwork — producing an instant on-screen **proof** before they order a printed oversized tee. Drop-shipped via print-on-demand.
 
 > **POC build.** Scope is deliberately small (see [`PRD.md`](./PRD.md) §2). Build only what is marked POC. Phase 2 work (automated fulfillment, accounts) is documented but not built yet.
