@@ -55,7 +55,7 @@
 | Payments | Stripe Checkout | Hosted checkout; webhook for payment confirmation |
 | Fulfillment | Printful | Manual order placement in Phase 1; API automation in Phase 2 |
 | Styling | Tailwind CSS mapped to design tokens | Tokens defined in `DESIGN.md` |
-| Issue tracking | GitHub Issues + Projects | No Linear; `TASKS.md` mirrors the backlog |
+| Issue tracking | GitHub Issues + Projects | No Linear; live board: github.com/users/jhandler-dev/projects/2 |
 | Library docs | Context7 (MCP) | Fetch current docs before using any library |
 
 **API routes:** all server endpoints live under `/api/*` (Next.js route handlers). See `/docs`.

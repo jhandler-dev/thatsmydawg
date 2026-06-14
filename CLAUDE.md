@@ -182,7 +182,7 @@ Fetch current docs for any library before writing code that uses it.
 
 ## 7. Issue Tracking (GitHub Issues — replaces Linear)
 
-Every unit of work is a GitHub issue. `TASKS.md` mirrors the backlog for humans.
+Every unit of work is a GitHub issue, tracked on the **[Project board](https://github.com/users/jhandler-dev/projects/2)** (grouped by Milestone M0–M6, with an Owner field). `ROADMAP.md` holds the plan + acceptance criteria; `TASKS.md` is now just a pointer to the board.
 
 **Issue template Claude uses:**
 ```
