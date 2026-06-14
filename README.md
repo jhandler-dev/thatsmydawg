@@ -33,7 +33,7 @@ Secrets (`FAL_KEY`, `STRIPE_SECRET_KEY`, `PRINTFUL_API_KEY`, Supabase service ke
 ├── PRD.md                        Product requirements — what to build and why
 ├── DESIGN.md                     Design system & visual language (from the website draft)
 ├── HOW_TO_WORK_WITH_CLAUDE.md    Copy-paste session templates
-├── TASKS.md                      Lightweight backlog mirror of GitHub Issues
+├── TASKS.md                      Pointer to the live GitHub Project board
 ├── .env.example                  All required env vars (no real values)
 ├── prisma/schema.prisma          Database schema
 ├── docs/                         API reference + workflow + security

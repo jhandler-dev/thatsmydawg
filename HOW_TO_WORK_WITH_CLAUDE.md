@@ -133,7 +133,7 @@ For each issue:
 - Acceptance criteria (specific, testable)
 - POC notes (deferrals)
 
-Create them all in one batch via GitHub MCP. Then update TASKS.md to mirror them.
+Create them all in one batch (gh CLI / GitHub MCP) and add them to the Project board.
 ```
 
 ---
