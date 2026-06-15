@@ -34,7 +34,7 @@
     "postcss": "^8.4.0",
     "autoprefixer": "^10.4.0",
     "eslint": "^9.0.0",
-    "eslint-config-next": "^15.0.0"
-  },
-  "comment": "Stub. The init session runs create-next-app and confirms exact versions via Context7 before installing; treat these as starting points, not pins."
+    "eslint-config-next": "^15.0.0",
+    "@eslint/eslintrc": "^3.0.0"
+  }
 }

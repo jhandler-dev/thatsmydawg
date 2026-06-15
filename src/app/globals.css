@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Minimal base tokens so the scaffold renders on the dark canvas (DESIGN.md §2).
+ * Full color-token + font mapping is W15/W16/W17 — keep this lean.
+ */
+:root {
+  --color-black: #080808;
+  --color-cream: #f0ead8;
+}
+
+html,
+body {
+  background-color: var(--color-black);
+  color: var(--color-cream);
+}
+
+/* Accessibility baseline (DESIGN.md §6) — full handling in W17. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
