@@ -29,6 +29,19 @@ const config: Config = {
         white: token("--color-white"),
         red: token("--color-red"),
       },
+      /*
+       * DESIGN.md §3 typeface roles, bound to the next/font CSS variables set
+       * in src/app/layout.tsx. Each falls back to a sensible system stack while
+       * the webfont loads (swap). Usage:
+       *   font-display → Bebas Neue   (hero title, scene names, step numbers, logo)
+       *   font-sans    → DM Sans      (body/UI workhorse; also the page default)
+       *   font-serif   → Playfair     (editorial accent, used sparingly)
+       */
+      fontFamily: {
+        display: ["var(--font-bebas)", "Impact", "sans-serif"],
+        sans: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
+        serif: ["var(--font-playfair)", "Georgia", "serif"],
+      },
     },
   },
   plugins: [],
