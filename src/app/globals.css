@@ -29,6 +29,38 @@ body {
   color: rgb(var(--color-cream));
 }
 
+/*
+ * DESIGN.md §3 base typographic scale. This is the foundation only — the
+ * default families and reading rhythm. Per-component sizes (hero clamp,
+ * eyebrow tracking, price, section titles) land with the storefront in M2;
+ * they layer on top of these defaults via Tailwind utilities.
+ *
+ * Rule from §3: "Headlines are Bebas; running text is DM Sans." So body text
+ * defaults to DM Sans (the workhorse) and headings to Bebas Neue (tall,
+ * condensed, all-caps energy). var(--font-*) come from next/font in layout.tsx.
+ */
+@layer base {
+  body {
+    font-family: var(--font-dm-sans), system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.65; /* §3 body/hero-subtext reading rhythm */
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-bebas), Impact, sans-serif;
+    font-weight: 400; /* Bebas ships a single weight */
+    line-height: 0.9; /* §3 hero title line-height; tight, condensed */
+    letter-spacing: 0.03em; /* §3 display tracking */
+  }
+}
+
 /* Accessibility baseline (DESIGN.md §6) — full handling in W17. */
 @media (prefers-reduced-motion: reduce) {
   *,
