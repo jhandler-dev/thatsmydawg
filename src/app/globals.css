@@ -3,18 +3,30 @@
 @tailwind utilities;
 
 /*
- * Minimal base tokens so the scaffold renders on the dark canvas (DESIGN.md §2).
- * Full color-token + font mapping is W15/W16/W17 — keep this lean.
+ * DESIGN.md §2 color tokens — the single source of truth for every color.
+ * Stored as space-separated RGB channels (not hex) so Tailwind can apply
+ * opacity modifiers via rgb(var(--color-x) / <alpha-value>) — e.g.
+ * text-cream/55 (the muted-subtext pattern) and border-gold/28 (gold-tint
+ * borders) called out in DESIGN §2/§5. The hex in each comment is the
+ * DESIGN §2 reference value, kept only for traceability — never applied.
+ * Dark theme only (DESIGN §2, §8): there is intentionally no light-mode block.
  */
 :root {
-  --color-black: #080808;
-  --color-cream: #f0ead8;
+  --color-black: 8 8 8; /* #080808 — page background, the canvas */
+  --color-offblack: 17 17 17; /* #111111 — slightly lifted sections */
+  --color-charcoal: 24 24 24; /* #181818 — card / scene-tile background */
+  --color-cream: 240 234 216; /* #f0ead8 — primary body text on dark */
+  --color-bone: 217 207 184; /* #d9cfb8 — secondary / muted text */
+  --color-gold: 201 168 76; /* #c9a84c — signature accent (CTAs, prices) */
+  --color-gold2: 232 201 106; /* #e8c96a — gold hover / highlight */
+  --color-white: 255 255 255; /* #ffffff — headlines, max-contrast text */
+  --color-red: 192 57 43; /* #c0392b — errors / destructive states */
 }
 
 html,
 body {
-  background-color: var(--color-black);
-  color: var(--color-cream);
+  background-color: rgb(var(--color-black));
+  color: rgb(var(--color-cream));
 }
 
 /* Accessibility baseline (DESIGN.md §6) — full handling in W17. */
