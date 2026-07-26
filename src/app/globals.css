@@ -21,12 +21,21 @@
   --color-gold2: 232 201 106; /* #e8c96a — gold hover / highlight */
   --color-white: 255 255 255; /* #ffffff — headlines, max-contrast text */
   --color-red: 192 57 43; /* #c0392b — errors / destructive states */
+
+  /* Dark theme only (DESIGN §2, §8) — themes native form controls, scrollbars, etc. */
+  color-scheme: dark;
 }
 
 html,
 body {
   background-color: rgb(var(--color-black));
   color: rgb(var(--color-cream));
+}
+
+html {
+  /* Single-page storefront with in-page nav links (PRD §6); reduced under
+     prefers-reduced-motion below. */
+  scroll-behavior: smooth;
 }
 
 /*
@@ -59,15 +68,38 @@ body {
     line-height: 0.9; /* §3 hero title line-height; tight, condensed */
     letter-spacing: 0.03em; /* §3 display tracking */
   }
+
+  /*
+   * DESIGN.md §4 minimum touch target (44px, mobile web). Scoped to elements
+   * that act as controls. `min-height`/`min-width` are no-ops on the default
+   * `a` display (inline), so this only takes effect once a component makes a
+   * link block/inline-block/flex (nav CTA, `.btn`, badges) — every future
+   * interactive component inherits the floor for free. Native checkboxes and
+   * radios are excluded: their tappable area belongs on a wrapping label,
+   * not the control itself.
+   */
+  button,
+  a,
+  input:not([type="checkbox"]):not([type="radio"]),
+  select,
+  textarea {
+    min-height: 2.75rem; /* 44px */
+    min-width: 2.75rem; /* 44px */
+  }
 }
 
-/* Accessibility baseline (DESIGN.md §6) — full handling in W17. */
+/* Accessibility baseline (DESIGN.md §6). */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

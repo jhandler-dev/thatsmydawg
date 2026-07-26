@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, DM_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
@@ -40,6 +40,13 @@ export const metadata: Metadata = {
   title: "That's My Dawg",
   description:
     "Upload your dog, drop it into a hand-designed scene, order the printed tee.",
+};
+
+// DESIGN.md §2 — dark theme only; matches --color-black so mobile browser
+// chrome (address bar, etc.) never flashes a light color on load.
+export const viewport: Viewport = {
+  themeColor: "#080808",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
