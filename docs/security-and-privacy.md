@@ -99,7 +99,7 @@ This is the one endpoint that costs money per call, so it is the main abuse surf
 | Charged amount comes from server/DB | ✅ Enforced | §6 |
 | No card data stored | ✅ Enforced | §2, §6 |
 | `/admin` gated by env secret | ✅ Enforced | §2 |
-| Signed URLs for stored images | ✅ Target | §5 |
+| Signed URLs for stored images | ✅ Enforced | §5 |
 | **Shared rate-limit store (Redis/Upstash)** | ⏳ Deferred | §9 |
 | **Image encryption at rest / advanced abuse defense** | ⏳ Deferred | §9 |
 | **Defined retention auto-pruning job** | ⏳ Deferred | §9 |
@@ -142,6 +142,7 @@ When any of these is implemented, move it from §9 to §8 and log it below.
 | Date | Change | Refs |
 |---|---|---|
 | (foundation) | Initial standard. Server-side-only secrets; removed the draft's browser fal-key flow; generation rate-limit + free cap; server-side upload validation; Stripe webhook verification + idempotency; PII isolation in `/admin`. | — |
+| 2026-07-25 | `lib/storage` helper added (#18): uploads land under a per-session path, objects are served exclusively via time-limited signed URLs (`SIGNED_URL_EXPIRES_IN_SECONDS`, default 1h) — no permanent public URLs. Callers should persist the storage path and re-sign on read rather than persisting a signed URL. | §5, §8 |
 
 ---
 

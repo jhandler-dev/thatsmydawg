@@ -25,3 +25,6 @@ export const FAL_MODEL_ID = "fal-ai/gemini-25-flash-image/edit";
 
 /** Currency. */
 export const CURRENCY = "usd";
+
+/** Lifetime of a Supabase Storage signed URL, in seconds (1 hour). */
+export const SIGNED_URL_EXPIRES_IN_SECONDS = 60 * 60;
